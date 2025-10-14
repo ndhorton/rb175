@@ -14,7 +14,7 @@ def parse_request(request_line)
 
   path, param_string = path_and_params.split('?')
 
-  params = param_string.split('&').each_with_object({}) do |param_pair, hash|
+  params = (param_string || '').split('&').each_with_object({}) do |param_pair, hash|
     key, value = param_pair.split('=')
     hash[key] = value
   end
@@ -31,8 +31,8 @@ loop do
 
   puts request_line
   http_method, path, params = parse_request(request_line)
-  rolls = params['rolls'].to_i
-  sides = params['sides'].to_i
+
+  number = params['number'].to_i
 
   client.puts 'HTTP/1.0 200 OK'
   client.puts "Content-Type: text/html\r\n\r\n"
@@ -42,10 +42,12 @@ loop do
   client.puts request_line
   client.puts http_method, path, params
   client.puts '</pre>'
-  client.puts '<h1>Rolls!</h1>'
-  rolls.times do
-    client.puts "<p>#{rand(sides) + 1}</p>"
-  end
+
+  client.puts '<h1>Counter</h1>'
+  client.puts "<p>The current number is #{number}.</p>"
+
+  client.puts "<a href='?number=#{number + 1}'>Add one</a>"
+  client.puts "<a href='?number=#{number - 1}'>Subtract one</a>"
 
   client.puts '</body>'
   client.puts '</html>'

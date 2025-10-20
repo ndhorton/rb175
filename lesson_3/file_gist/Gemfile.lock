@@ -1,0 +1,27 @@
+GEM
+  remote: https://gem.coop/
+  specs:
+    caxlsx (4.4.0)
+      htmlentities (~> 4.3, >= 4.3.4)
+      marcel (~> 1.0)
+      nokogiri (~> 1.10, >= 1.10.4)
+      rubyzip (>= 2.4, < 4)
+    htmlentities (4.3.4)
+    marcel (1.1.0)
+    nokogiri (1.18.10-x86_64-linux-gnu)
+      racc (~> 1.4)
+    racc (1.8.1)
+    rubyzip (3.2.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  caxlsx
+  nokogiri
+
+RUBY VERSION
+   ruby 3.2.2p53
+
+BUNDLED WITH
+   2.4.10

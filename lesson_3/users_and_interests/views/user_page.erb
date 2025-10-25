@@ -1,0 +1,12 @@
+<h1><%= @name %></h1>
+<p>Email: <%= @current_user[:email] %></p>
+<p>Interests: <%= @current_user[:interests].join(', ') %></p>
+<hr>
+<nav>
+  <ul>
+    <% @users.each do |name, userhash| %>
+      <% next if name == @name %>
+      <li><a href="/users/<%= name %>"><%= name %></a></li>
+    <% end %>
+  </ul>
+</nav>

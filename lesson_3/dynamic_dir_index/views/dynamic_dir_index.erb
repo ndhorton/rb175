@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Directory Index</title>
+    <style>
+      .list-item { display: block; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Dynamic Directory Index</h1>
+      <hr>
+      <h2>
+        <% if params[:sort] == 'desc' %>
+          <a href="/">
+            Ascending order
+          </a>
+        <% else %>
+          <a href="/?sort=desc">
+            Descending order
+          </a>
+        <% end %>
+      </h2>
+      <hr>
+      <ul>
+        <% @dir_list.each do |file| %>
+          <li>
+            <a href="<%= file %>" class="list-item"><%= file %></a>
+          </li>
+        <% end %>
+      </ul>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+# frozen_string_literal: false
+
+require 'rake/testtask'
+
+desc 'Run app'
+task :run do
+  sh 'bundle exec ruby ./app.rb'
+end
+
+desc 'Run tests'
+task default: :test
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'test'
+  t.libs << 'lib'
+  t.test_files = FileList['test/**/*_test.rb']
+end

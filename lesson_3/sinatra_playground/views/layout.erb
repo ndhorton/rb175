@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overall Layout</title>
+    <title>Sinatra Playground</title>
+    <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
+    <link rel="stylesheet" href="/stylesheets/app.css"
   </head>
-  <body>
-    <header>
-      <h1>My Layout</h1>
-    </header>
-    <main>
-      <%= yield %>
-    </main>
-  </body>
-</html>
+    <body>
+      <header>
+        <h1>Sinatra Playground</h1>
+      </header>
+      <main>
+        <%= yield %>
+      </main>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <%= yield_content :jquery_script %>
+    </body>
+  </html>

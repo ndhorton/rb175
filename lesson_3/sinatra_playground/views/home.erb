@@ -1,3 +1,23 @@
-<h2>Inside home.erb</h2>
-<%= erb :mypartial %>
-<h3>Back inside home.erb</h3>
+<section class="panel" id="#panel1">
+  <h2>Panel 1</h2>
+  <p>Text goes here...</p>
+</section>
+<section class="panel" id="#panel2">
+  <h2>Panel 2</h2>
+  <p>Text goes here...</p>
+</section>
+<section class="panel" id="#panel3">
+  <h2>Panel 3</h2>
+  <p>Text goes here...</p>
+</section>
+<section class="panel" id="#panel4">
+  <h2>Panel 4</h2>
+  <p>Text goes here...</p>
+</section>
+<% content_for :jquery_script do %>
+  <script>
+    $(document.ready(function() {
+      $("#panel1").hide(300);
+    });
+  </script>
+<% end %>

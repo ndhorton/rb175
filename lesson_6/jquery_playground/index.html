@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+      html, body {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .panel {
+        display: inline-block;
+        width: 25%;
+        border: 1px solid black;
+      }
+
+      .panel h2 {
+        background-color: dodgerblue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="panel" id="panel1">
+        <h2>Panel 1</h2>
+        <p>Text goes here...</p>
+      </section>
+    </main>
+    <script>
+      $(document).ready(function() {
+        $('#panel1').on('click', function() {
+          $(this).hide(500);
+        });
+      });
+    </script>
+  </body>
+</html>
